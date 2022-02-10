@@ -1,0 +1,32 @@
+<div class="card">
+    <div class="card-body">
+        <div class="form-signin text-center">
+            <form class="form-signin" #inputForm="ngForm">
+                <div class="form-group">
+                    <div class="mb-5">
+                        <h1 class="h3 font-weight-normal">Welcome Back</h1>
+                        <p>
+                            Do you have an account yet? <a [routerLink]="['/register']">Click here to Register</a>
+                        </p>
+                    </div>
+
+                    <app-errors [errors]="errors"></app-errors>
+
+                    <label for="EmailAddress" class="sr-only">Email Address</label>
+                    <input type="email" id="EmailAddress" name="emailAddress" class="form-control" placeholder="Enter Email Address" [(ngModel)]="model.emailAddress" />
+
+                    <label for="Password" class="sr-only">Password</label>
+                    <input type="password" id="Password" name="password" class="form-control" placeholder="Enter Password" [(ngModel)]="model.password" />
+                </div>
+                <div class="form-group checkbox mb-3 text-left">
+                    <label>
+                        <input type="checkbox" name="rememberMe" [(ngModel)]="rememberMe" /> Remember Me
+                    </label>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block" [disabled]="loading" (click)="onLogin()">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="card">
+    <div class="card-body">
+        <div class="form-register text-center">
+            <form class="form-register" #inputForm="ngForm">
+                <div class="form-group">
+                    <div class="mb-5">
+                        <h1 class="h3 font-weight-normal">Register to Continue</h1>
+                        <p>
+                            Already a user? <a [routerLink]="['/login']">Click here to Login</a>.
+                        </p>
+                    </div>
+
+                    <app-errors [errors]="errors"></app-errors>
+
+                    <label for="FirstName" class="sr-only">First Name</label>
+                    <input type="text" id="FirstName" name="firstName" class="form-control first" placeholder="Enter First Name" [(ngModel)]="model.firstName" />
+
+                    <label for="LastName" class="sr-only">Last Name</label>
+                    <input type="text" id="LastName" name="lastName" class="form-control" placeholder="Enter Last Name" [(ngModel)]="model.lastName" />
+
+                    <label for="EmailAddress" class="sr-only">Email Address</label>
+                    <input type="email" id="EmailAddress" name="emailAddress" class="form-control" placeholder="Enter Email Address" [(ngModel)]="model.emailAddress" />
+
+                    <label for="Password" class="sr-only">Password</label>
+                    <input type="password" id="Password" name="password" class="form-control" placeholder="Enter Password" [(ngModel)]="model.password" />
+
+                    <label for="ConfirmPassword" class="sr-only">Confirm Password</label>
+                    <input type="password" id="ConfirmPassword" name="password" class="form-control last" placeholder="Enter Confirm Password" [(ngModel)]="model.confirmPassword" />
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block" [disabled]="loading" (click)="onRegister()">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>

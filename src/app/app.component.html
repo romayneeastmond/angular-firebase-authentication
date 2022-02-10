@@ -1,0 +1,26 @@
+<ng-container *ngIf="authenticatedTemplate; then authenticated; else notauthenticated">
+</ng-container>
+
+<ng-template #authenticated>
+    <div class="container-fluid">
+        <div class="row">
+            <main role="main" class="col-md-12 ml-sm-auto col-lg-12 pt-3 px-4">
+                <router-outlet></router-outlet>
+            </main>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #notauthenticated>
+    <div class="container-fluid vertical-align">
+        <div class="row">
+            <main role="main" class="col-md-12 ml-sm-auto col-lg-12 pt-3 px-4">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-8">
+                        <router-outlet></router-outlet>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</ng-template>

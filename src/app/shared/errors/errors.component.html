@@ -1,0 +1,10 @@
+<div class="alert alert-danger text-left small" role="alert" *ngIf="this.errors && this.errors.length > 0">
+    <div>
+        <p>
+            Something has gone wrong!
+        </p>
+        <ul class="errors">
+            <li *ngFor="let error of errors">{{error}}</li>
+        </ul>
+    </div>
+</div>

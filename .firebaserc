@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "development-sandbox-c341e": {
+      "hosting": {
+        "firebase-authentication-angular": [
+          "development-sandbox-c341e"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "development-sandbox-c341e"
+  }
+}

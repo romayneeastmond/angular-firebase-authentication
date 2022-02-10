@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <div class="row">
+        <main role="main" class="col-md-12 ml-sm-auto col-lg-12 pt-3 px-4">
+            <h1>Members Only</h1>
+
+            <p>
+                Welcome Back, {{model.firstName}} {{model.lastName}} ({{model.emailAddress}})
+            </p>
+
+            <button class="btn btn-primary btn-sm" (click)="onLogout()">Logout</button>
+        </main>
+    </div>
+</div>

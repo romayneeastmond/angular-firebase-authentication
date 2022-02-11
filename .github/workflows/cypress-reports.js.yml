@@ -9,10 +9,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install Cypress and verify
+      - name: Install
         run: |
           npm ci
-          $(npm bin)/cypress verify
           
       - name: Run Cypress tests
         run: |          

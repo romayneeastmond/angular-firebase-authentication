@@ -24,7 +24,7 @@ describe('Login Page /login', () => {
     it('Confirm clicking Login button', () => {
         cy.get('button').click()
         cy.url().should('not.includes', 'members')
-        cy.contains('Something has gone wrong!')
+        cy.contains('Something has gone wrong!!')
         cy.contains('Email Address is required.')
         cy.contains('Password is required.')
     })

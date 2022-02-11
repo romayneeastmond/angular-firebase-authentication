@@ -24,7 +24,10 @@ jobs:
       - name: Copy Cypress videos and screenshots
         run: |
           cp -r cypress/videos cypress-report/videos        
-      
+          if [ -d "./cypress/screenshots" ]; then
+              cp -r cypress/screenshots cypress-report/screenshots
+          fi
+
       - name: Deploy HTML report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:

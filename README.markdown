@@ -43,6 +43,14 @@ Starting the project will run it on the default Angular location http://localhos
 ng -o serve
 ```
 
+## Deployment
+
+After building the Angular application it can be deployed using the Firebase CLI command
+
+```
+firebase deploy --only hosting
+```
+
 ## Cypress End2End (e2e) Testing
 
 To add Cypress testing run the following command
@@ -60,6 +68,8 @@ npm run cypress:open
 ```
 npm run cypress:run
 ```
+
+Integrating Cypress with Mochawesome Reporting produces an HTML readable output of the entire e2e test run. This makes it possible to get a graphical summary of how the components within an Angular application responded to tests. A live demo of these runs can be found at https://romayneeastmond.github.io/angular-firebase-authentication/
 
 ## Copyright and Ownership
 

@@ -13,8 +13,8 @@
     "cypress:run": "cypress run",
     "clean:reports:github": "rm -rf mochawesome-report/",
     "generate:html:report": "npm run merge:reports && npm run create:html:report",
-    "merge:reports": "mochawesome-merge mochawesome-report/*.json > cypress-tests-report.json",
-    "create:html:report": "marge cypress-tests-report.json --reportDir cypress-report"
+    "merge:reports": "mochawesome-merge mochawesome-report/*.json > index.json",
+    "create:html:report": "marge index.json --reportDir cypress-report"
   },
   "private": true,
   "dependencies": {

@@ -26,8 +26,13 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/favicon-website.png", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "assets": [
+              "src/favicon-website.png",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -89,8 +94,13 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/favicon-website.png", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "assets": [
+              "src/favicon-website.png",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
             "scripts": []
           }
         },
@@ -102,6 +112,37 @@
             "browserTarget": "firebase-authentication-angular:build:production",
             "firebaseProject": "development-sandbox-c341e",
             "firebaseHostingSite": "development-sandbox-c341e"
+          }
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "firebase-authentication-angular:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "firebase-authentication-angular:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "watch": true,
+            "headless": false
+          }
+        },
+        "e2e": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "firebase-authentication-angular:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "firebase-authentication-angular:serve:production"
+            }
           }
         }
       }

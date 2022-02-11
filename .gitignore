@@ -52,7 +52,7 @@ README.md
 /cypress/videos/*.mp4
 /cypress-report
 /mochawesome-report
-cypress-tests-report.json
+index.json
 
 # Firebase
 .firebase

@@ -16,7 +16,7 @@ jobs:
           
       - name: Run Cypress tests
         run: |          
-          npm run cypress:run --config "baseUrl=https://development-sandbox-c341e.web.app"
+          CYPRESS_baseUrl=https://development-sandbox-c341e.web.app npm run cypress:run
         continue-on-error: true
 
       - name: Copy Cypress videos and screenshots

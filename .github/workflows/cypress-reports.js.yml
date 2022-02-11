@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   
 jobs:
-  cypress-test:
+  install_cypress_run_tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -18,10 +18,17 @@ jobs:
           CYPRESS_baseUrl=https://development-sandbox-c341e.web.app npm run cypress:run
         continue-on-error: true
           
+      - name: Copy Cypress videos and screenshots
+        run: |
+          mkdir public
+          cp -r cypress/videos cypress-report/videos
+          cp -r cypress/screenshots cypress-report/screenshots  
+        continue-on-error: true
+          
       - name: Generate HTML report
         run: npm run generate:html:report
       
-      - name: Deploy HTML report to GitHub Page
+      - name: Deploy HTML report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

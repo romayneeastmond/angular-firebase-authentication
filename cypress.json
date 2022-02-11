@@ -5,5 +5,13 @@
   "screenshotsFolder": "cypress/screenshots",
   "pluginsFile": "cypress/plugins/index.ts",
   "fixturesFolder": "cypress/fixtures",
-  "baseUrl": "http://localhost:4200"
+  "baseUrl": "http://localhost:4200",
+  "reporter": "../node_modules/mochawesome/src/mochawesome.js",
+  "reporterOptions": {
+    "charts": true,
+    "overwrite": false,
+    "html": false,
+    "json": true,
+    "embeddedScreenshots": true
+  }
 }

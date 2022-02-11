@@ -48,6 +48,11 @@ Thumbs.db
 /src/environments/environment.ts
 /src/environments/environment.prod.ts
 README.md
+/cypress/screenshots/*.png
+/cypress/videos/*.mp4
+/cypress-report
+/mochawesome-report
+cypress-tests-report.json
 
 # Firebase
 .firebase

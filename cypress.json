@@ -8,10 +8,8 @@
   "baseUrl": "http://localhost:4200",
   "reporter": "../node_modules/mochawesome/src/mochawesome.js",
   "reporterOptions": {
-    "charts": true,
     "overwrite": false,
     "html": false,
-    "json": true,
-    "embeddedScreenshots": true
+    "json": true
   }
 }

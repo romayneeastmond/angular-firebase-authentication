@@ -14,7 +14,7 @@
     "clean:reports:github": "rm -rf mochawesome-report/",
     "generate:html:report": "npm run merge:reports && npm run create:html:report",
     "merge:reports": "mochawesome-merge mochawesome-report/*.json > index.json",
-    "create:html:report": "marge index.json --reportDir cypress-report"
+    "create:html:report": "marge index.json --reportDir cypress-report --reportPageTitle \"Firebase Authentication Angular\""
   },
   "private": true,
   "dependencies": {

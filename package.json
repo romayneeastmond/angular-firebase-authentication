@@ -14,7 +14,7 @@
     "clean:reports:github": "rm -rf mochawesome-report/",
     "generate:html:report": "npm run merge:reports && npm run create:html:report",
     "merge:reports": "mochawesome-merge mochawesome-report/*.json > cypress-tests-report.json",
-    "create:html:report": "marge --reportDir cypress-report cypress-tests-report.json"
+    "create:html:report": "marge cypress-tests-report.json --reportDir cypress-report --reportPageTitle index.html"
   },
   "private": true,
   "dependencies": {

@@ -18,16 +18,11 @@ import './login.commands'
 import addContext from 'mochawesome/addContext'
 
 Cypress.on("test:after:run", (test, runnable) => {
-    let videoName = Cypress.spec.name
-    videoName = videoName.replace('/.js.*', '.js')
-    const videoUrl = 'videos/' + videoName + '.mp4'
-
-    addContext({ test }, videoUrl)
+    addContext({ test }, { title: "Video", value: `videos/${Cypress.spec.name.replace('/.js.*', '.js')}.mp4` })
 
     if (test.state === 'failed') {
         let parentTitle = runnable.parent!.title
-
-        var pos = parentTitle.lastIndexOf('/')
+        let pos = parentTitle.lastIndexOf('/')
 
         parentTitle = parentTitle.substring(0, pos) + parentTitle.substring(pos + 1)
 

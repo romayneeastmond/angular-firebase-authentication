@@ -18,10 +18,13 @@ import './login.commands'
 import addContext from 'mochawesome/addContext'
 
 Cypress.on("test:after:run", (test, runnable) => {
-
     let videoName = Cypress.spec.name
     videoName = videoName.replace('/.js.*', '.js')
     const videoUrl = 'videos/' + videoName + '.mp4'
 
     addContext({ test }, videoUrl)
+
+    if (test.state === 'failed') {
+        addContext({ test }, { title: "Screenshot", value: `${Cypress.config('screenshotsFolder')}/${Cypress.spec.name}/${runnable.parent!.title} -- ${test.title} (failed).png` })
+    }
 });

@@ -18,12 +18,12 @@ jobs:
           CYPRESS_baseUrl=https://development-sandbox-c341e.web.app npm run cypress:run
         continue-on-error: true
           
-      - name: Copy Cypress videos and screenshots
-        run: |
-          cp -r cypress/videos cypress-report/videos
-          
       - name: Generate HTML report
         run: npm run generate:html:report
+          
+      - name: Copy Cypress videos and screenshots
+        run: |
+          cp -r cypress/videos cypress-report/videos        
       
       - name: Deploy HTML report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

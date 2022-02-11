@@ -25,6 +25,12 @@ Cypress.on("test:after:run", (test, runnable) => {
     addContext({ test }, videoUrl)
 
     if (test.state === 'failed') {
-        addContext({ test }, { title: "Screenshot", value: `screenshots/${Cypress.spec.name}${runnable.parent!.title} -- ${test.title} (failed).png` })
+        let parentTitle = runnable.parent!.title
+
+        var pos = parentTitle.lastIndexOf('/')
+
+        parentTitle = parentTitle.substring(0, pos) + parentTitle.substring(pos + 1)
+
+        addContext({ test }, { title: "Screenshot", value: `screenshots/${Cypress.spec.name}/${parentTitle} -- ${test.title} (failed).png` })
     }
 });

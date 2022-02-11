@@ -1,4 +1,4 @@
-# Angular Forms with Firebase Authentication and Firestore Storage Demonstration
+# Angular Forms with Firebase Authentication and Firestore Storage Demonstration (Cypress End2End Testing)
 
 An Angular 12 project that uses Firebase for authentication and an accompanying Firestore database to store user registration details.
 
@@ -41,6 +41,24 @@ Starting the project will run it on the default Angular location http://localhos
 
 ```
 ng -o serve
+```
+
+## Cypress End2End (e2e) Testing
+
+To add Cypress testing run the following command
+
+```
+ng add @cypress/schematic
+```
+
+The test suite can be run with the browser or headless depending on which of the following commands are used
+
+```
+npm run cypress:open
+```
+
+```
+npm run cypress:run
 ```
 
 ## Copyright and Ownership

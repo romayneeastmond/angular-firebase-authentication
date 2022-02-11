@@ -5,9 +5,7 @@ on:
   
 jobs:
   cypress-test:
-    name: Run on Chrome 97 Container
-    runs-on: ubuntu-18.04
-    container: cypress/browsers:node16.13.2-chrome97-ff96
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
 
@@ -18,7 +16,7 @@ jobs:
           
       - name: Run Cypress tests
         run: |          
-          npm run test:chrome
+          npm run cypress:run --config "baseUrl=https://development-sandbox-c341e.web.app"
         continue-on-error: true
 
       - name: Copy Cypress videos and screenshots

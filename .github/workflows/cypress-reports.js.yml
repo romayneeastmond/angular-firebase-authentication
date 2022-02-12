@@ -28,9 +28,15 @@ jobs:
               cp -r cypress/screenshots cypress-report/screenshots
           fi
 
+      - name: Upload HTML report
+        uses: actions/upload-artifact@v2
+        with:
+          name: cypress-html-report
+          path: ./cypress-report
+          retention-days: 7
+
       - name: Deploy HTML report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./cypress-report
-          

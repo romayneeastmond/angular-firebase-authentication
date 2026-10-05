@@ -69,7 +69,7 @@ npm run cypress:open
 npm run cypress:run
 ```
 
-Integrating Cypress with Mochawesome Reporting produces an HTML readable output of the entire e2e test run. This makes it possible to get a graphical summary of how the components within an Angular application responded to tests. A live demo of these runs can be found at https://romayneeastmond.github.io/angular-firebase-authentication/
+Integrating Cypress with Mochawesome Reporting produces an HTML readable output of the entire e2e test run.
 
 ## Copyright and Ownership
 
